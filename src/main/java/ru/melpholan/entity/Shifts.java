@@ -1,0 +1,67 @@
+package ru.melpholan.entity;
+
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Date;
+
+@Entity
+@Table(name = "Shifts")
+public class Shifts implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idShifts", nullable = false)
+    private Long idShifts;
+
+    public Long getIdShifts() {
+        return idShifts;
+    }
+
+    public void setIdShifts(Long idShifts) {
+        this.idShifts = idShifts;
+    }
+
+
+    //@Temporal(TemporalType.DATE)
+    @Column(name = "workDate")
+    private java.sql.Date workDate;
+
+    //mapping to ShiftTypes
+    @ManyToOne
+    @JoinColumn(name = "ShiftTypes_idShiftTypes")
+    private ShiftTypes shiftTypes;
+
+    public ShiftTypes getShiftTypes() {
+        return this.shiftTypes;
+    }
+
+    public void setShiftTypes(ShiftTypes shiftTypes){
+        this.shiftTypes = shiftTypes;
+    }
+
+    public Date getWorkDate() {
+        return workDate;
+    }
+
+    public void setWorkDate(java.sql.Date workDate) {
+        this.workDate = workDate;
+    }
+
+    public Shifts(){}
+
+    @Override
+    public int hashCode() {
+        int result = getIdShifts().hashCode();
+        result = 31 * result + shiftTypes.hashCode();
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Shifts{" +
+                "idShifts=" + idShifts +
+                ", Shifts='" + this.getShiftTypes() + '\'' +
+                ", ShiftDate= " + this.getWorkDate() +
+                '}';
+    }
+}
