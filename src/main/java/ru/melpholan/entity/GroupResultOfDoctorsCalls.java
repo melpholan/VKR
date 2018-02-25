@@ -50,4 +50,11 @@ public class GroupResultOfDoctorsCalls implements Serializable {
     public GroupResultOfDoctorsCalls(String nameOfGroupResults) {
         this.nameOfGroupResults = nameOfGroupResults;
     }
+
+    @Override
+    public String toString() {
+        return "GroupResultOfDoctorsCalls{" +
+                "nameOfGroupResults='" + nameOfGroupResults + '\'' +
+                '}';
+    }
 }

@@ -3,7 +3,6 @@ package ru.melpholan.DAO.Impl;
 
 import org.hibernate.Session;
 import ru.melpholan.DAO.GenericDAO;
-
 import java.io.Serializable;
 import java.util.List;
 
@@ -22,6 +21,7 @@ public abstract class GenericDAOImpl <T, PK extends Serializable>
     public void setSession(Session session) { this.session = session; }
 
     public Session getSession(){ return session; }
+
 
     @Override
     public PK create(T newInstance) {

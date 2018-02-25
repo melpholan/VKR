@@ -49,4 +49,12 @@ public class DoctorsErrors implements Serializable {
         this.errorsCharacter = errorsCharacter;
         this.errorScale = errorScale;
     }
+
+    @Override
+    public String toString() {
+        return "DoctorsErrors{" +
+                "errorsCharacter='" + errorsCharacter + '\'' +
+                ", errorScale=" + errorScale +
+                '}';
+    }
 }

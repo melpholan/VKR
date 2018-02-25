@@ -26,6 +26,19 @@ public class Shifts implements Serializable {
     @Column(name = "workDate")
     private java.sql.Date workDate;
 
+    //mapping to Personal
+    @ManyToOne
+    @JoinColumn(name = "Personal_idPersonal")
+    private Personal personal;
+
+    public Personal getPersonal() {
+        return personal;
+    }
+
+    public void setPersonal(Personal personal) {
+        this.personal = personal;
+    }
+
     //mapping to ShiftTypes
     @ManyToOne
     @JoinColumn(name = "ShiftTypes_idShiftTypes")

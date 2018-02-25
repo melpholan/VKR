@@ -3,6 +3,7 @@ package ru.melpholan.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "Personal")
@@ -22,8 +23,21 @@ public class Personal implements Serializable {
     @Column(name = "p_patronymic")
     private String patronymic;
 
+    @OneToMany(mappedBy = "personal")
+    List<Shifts> shifts;
 
+    public List<Shifts> getShifts() {
+        return shifts;
+    }
 
+    public void setShifts(List<Shifts> shifts) {
+        this.shifts = shifts;
+    }
+
+    public void addShift(Shifts shift){
+        shift.setPersonal(this);
+        this.getShifts().add(shift);
+    }
 
     //mapping to Passport
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)

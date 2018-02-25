@@ -51,4 +51,12 @@ public class ResultOfDoctorsCalls implements Serializable{
         this.typeOfResult = typeOfResult;
         this.groupResultOfDoctorsCalls = groupResultOfDoctorsCalls;
     }
+
+    @Override
+    public String toString() {
+        return "ResultOfDoctorsCalls{" +
+                "typeOfResult='" + typeOfResult + '\'' +
+             //   ", groupResultOfDoctorsCalls=" + groupResultOfDoctorsCalls +
+                '}';
+    }
 }

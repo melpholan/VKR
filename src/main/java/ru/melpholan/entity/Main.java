@@ -42,7 +42,7 @@ public class Main {
 //            System.out.println(personal);
 
 
-            Personal personByName = personalDAO.getPersonByName("Райков");
+            Personal personByName = personalDAO.findPersonByName("Райков");
             if(personByName !=null){
                 System.out.println(personByName);
             }

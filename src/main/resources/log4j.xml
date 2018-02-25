@@ -17,6 +17,11 @@
         <appender-ref ref="consoleLog"/>
     </category>
 
+    <category name="ru.melpholan.DAO">
+        <priority value="info"/>
+        <appender-ref ref="consoleLog"/>
+    </category>
+
     <category name="org.hibernate.SQL">
         <priority value="info"/>
         <appender-ref ref="consoleLog"/>

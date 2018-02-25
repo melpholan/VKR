@@ -5,6 +5,7 @@ import ru.melpholan.entity.Personal;
 
 public interface PersonalDAO extends GenericDAO<Personal,Integer>{
 
-    Personal getPersonByName(String name);
+    Personal findPersonByName(String name);
+    Personal findPersonalByFullName(String name, String surname);
 
 }

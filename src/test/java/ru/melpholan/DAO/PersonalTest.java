@@ -31,10 +31,8 @@ public class PersonalTest {
 
     @Test
     public void test1(){
-
-        Personal personal = personalDAO.read(10000);
-        System.out.println(personal);
-        System.out.println("OK-1");
+        Personal personal = new Personal();
+        personal.getIdPersonal();
     }
 
     @Test
